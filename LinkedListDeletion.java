@@ -21,17 +21,29 @@ public class LinkedListDeletion {
 			head=temp;
 		}
 		
-		public void removeAtIndex(int index){
+		public void removeAtIndex(int x){
+			System.out.println("After Deleting Node! - "+ x);
 			if(head==null){
 				return;
 			}
+			else if(head.data==x){
+				head = head.next;
+			}
 			Node temp=head;
 			Node previous=null;
-			while(temp!=null && temp.data!=index){
-				previous=temp;
+			while(temp.next!=null){
+				if(temp.next.data==x){
+					previous = temp;
+					temp=temp.next;
+					previous.next=temp.next;
+					return;
+				}
+				else if(temp.next.data==x){
+					temp.next=null;
+					return;
+				}
 				temp=temp.next;
-				previous.next=temp.next;	
-			}			
+			}	
 		}
 		
 		public void removeLast(){
