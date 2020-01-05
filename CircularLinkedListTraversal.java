@@ -14,7 +14,6 @@ public class CircularLinkedListTraversal {
 	}
 	
 	private void displayList(){
-		Stack<Integer> s=new Stack<>();
 		Node temp=head;
 		while(temp!=null){
 			System.out.print(temp.data+" ");
